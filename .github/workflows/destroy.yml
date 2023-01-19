@@ -1,0 +1,26 @@
+name: Destroy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  destroy:
+    name: Destroy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.3
+
+      - name: Destroy
+        run: |
+          export ARM_CLIENT_ID=${{ secrets.CLIENT_ID }}
+          export ARM_CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}
+          export ARM_SUBSCRIPTION_ID=${{ secrets.SUBSCRIPTION_ID }}
+          export ARM_TENANT_ID=${{ secrets.TENANT_ID }}
+
+          cd ${{ github.workspace }}/terraform/environments/development
+          terraform init
+          terraform destroy -auto-approve

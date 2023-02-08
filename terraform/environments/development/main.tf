@@ -8,8 +8,8 @@ module "general" {
 module "containers" {
   source = "../../modules/containers"
 
-  name = var.name
-  location = var.location
-  resource_group_name = module.general.resource_group_name
+  name                        = var.name
+  location                    = var.location
+  resource_group_name         = module.general.resource_group_name
   global_admin_user_principal = var.global_admin_user_principal
 }

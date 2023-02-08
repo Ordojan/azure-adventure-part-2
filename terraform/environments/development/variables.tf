@@ -5,7 +5,7 @@ variable "name" {
 variable "location" {
   type = string
 }
-  
+
 variable "global_admin_user_principal" {
   type = string
 }

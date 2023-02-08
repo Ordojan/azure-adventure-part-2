@@ -2,7 +2,7 @@ param (
     [string]
     $appName = "automation",
     [string]
-    $resouceGroupName = "terraform"
+    $resouceGroupName = "terraform-rg"
 )
 
 az group delete --name $resouceGroupName

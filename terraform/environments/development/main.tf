@@ -1,4 +1,6 @@
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+module "general" {
+  source = "../../modules/general"
+
+  name     = var.name
+  location = var.location
 }

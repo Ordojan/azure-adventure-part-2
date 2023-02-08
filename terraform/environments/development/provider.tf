@@ -10,9 +10,15 @@ terraform {
     azurerm = {
       source = "hashicorp/azurerm"
     }
+    azuread = {
+      source = "hashicorp/azurerm"
+    }
   }
 }
 
 provider "azurerm" {
   features {}
+}
+
+provider "azuread" {
 }

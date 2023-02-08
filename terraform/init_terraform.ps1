@@ -2,11 +2,11 @@ param (
     [string]
     $appName = "automation",
     [string]
-    $resouceGroupName = "terraform",
+    $resouceGroupName = "terraform-rg",
     [string]
     $location = "northeurope",
     [string]
-    $storageAccountName = "terraformstate$(Get-Random -Minimum 1000 -Maximum 9999)",
+    $storageAccountName = "terraformstate$(Get-Random -Minimum 1000 -Maximum 9999)-st",
     [string]
     $containerName = "tfstate"
 )

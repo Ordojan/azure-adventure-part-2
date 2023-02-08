@@ -15,8 +15,8 @@ $subscription = $(az account show --query id -o tsv)
 $credentials = $(az ad sp create-for-rbac -n $appName --role Contributor --scopes /subscriptions/$subscription)
 
 az group create --name $resouceGroupName --location $location -o none
-az storage account create --name $storageAccountName --resource-group $resouceGroupName --auth-mode login -o none 
-az storage container create --name $containerName --account-name $storageAccountName -o none
+az storage account create --name $storageAccountName --resource-group $resouceGroupName -o none 
+az storage container create --name $containerName --account-name $storageAccountName --auth-mode login -o none
 
 Write-Output "credentials:"
 Write-Output $credentials

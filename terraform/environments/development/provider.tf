@@ -11,7 +11,7 @@ terraform {
       source = "hashicorp/azurerm"
     }
     azuread = {
-      source = "hashicorp/azurerm"
+      source = "hashicorp/azuread"
     }
   }
 }
